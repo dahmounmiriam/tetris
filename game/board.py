@@ -1,8 +1,8 @@
 from typing import List, Tuple, Optional
 import pygame
 
-from .piece import Piece
-from .config import GRID_WIDTH, GRID_HEIGHT, CELL_SIZE, COLORS, BLACK, GRAY
+from piece import Piece
+from config import GRID_WIDTH, GRID_HEIGHT, CELL_SIZE, COLORS, BLACK, GRAY
 
 Position = Tuple[int, int]
 
