@@ -1,7 +1,9 @@
 import pygame
+
 from config import GameConfig, BLACK, WHITE, GRID_WIDTH
 from board import Board
 from piece import Piece
+
 
 
 def draw_window(surface: pygame.Surface, board: Board, current_piece: Piece, next_piece: Piece, held_piece: Piece | None, config: GameConfig):

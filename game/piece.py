@@ -2,8 +2,6 @@ from dataclasses import dataclass
 from typing import List, Tuple
 import random
 
-from config import COLORS
-
 SHAPES = [
     [[".....",
       ".....",
