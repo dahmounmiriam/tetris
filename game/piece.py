@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from typing import List, Tuple
 import random
 
+from game.config import COLORS
+
 SHAPES = [
     [[".....",
       ".....",
@@ -69,7 +71,7 @@ SHAPES = [
       "....."],
      [".....",
       "O....",
-      "OO..",
+      "OO...",
       ".O...",
       "....."]],
 
@@ -90,18 +92,18 @@ SHAPES = [
       "....."],
      [".....",
       "..O..",
-      "OO..",
+      "OO...",
       "..O..",
       "....."]],
 
     [[".....",
       ".....",
-      "OO..",
+      "OO...",
       ".OO..",
       "....."],
      [".....",
       "..O..",
-      "OO..",
+      "OO...",
       "O....",
       "....."]]
 ]

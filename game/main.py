@@ -1,12 +1,12 @@
 import pygame
+from typing import Optional
 
-from config import GameConfig, BLACK, WHITE, GRID_WIDTH
-from board import Board
-from piece import Piece
+from game.config import GameConfig, BLACK, WHITE, GRID_WIDTH
+from game.board import Board
+from game.piece import Piece
 
 
-
-def draw_window(surface: pygame.Surface, board: Board, current_piece: Piece, next_piece: Piece, held_piece: Piece | None, config: GameConfig):
+def draw_window(surface: pygame.Surface, board: Board, current_piece: Piece, next_piece: Piece, held_piece: Optional[Piece], config: GameConfig):
     surface.fill(BLACK)
     board.draw(surface)
 
@@ -15,7 +15,7 @@ def draw_window(surface: pygame.Surface, board: Board, current_piece: Piece, nex
         if y > -1:
             rect = pygame.Rect(x*config.cell_size, y*config.cell_size, config.cell_size, config.cell_size)
             pygame.draw.rect(surface, current_piece.color, rect)
-    
+
     # Draw next piece preview
     font = pygame.font.SysFont('Arial', 18)
     label = font.render('Next', True, WHITE)
@@ -35,13 +35,13 @@ def draw_window(surface: pygame.Surface, board: Board, current_piece: Piece, nex
                 if ch == 'O':
                     rect = pygame.Rect(config.play_width + 20 + j*config.cell_size, 140 + i*config.cell_size, config.cell_size, config.cell_size)
                     pygame.draw.rect(surface, held_piece.color, rect)
-    
+
     # Score
     score_label = font.render(f'Score: {board.score}', True, WHITE)
     level_label = font.render(f'Level: {board.level}', True, WHITE)
     surface.blit(score_label, (config.play_width + 20, 220))
     surface.blit(level_label, (config.play_width + 20, 240))
-    
+
     pygame.display.update()
 
 
